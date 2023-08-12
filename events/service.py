@@ -7,21 +7,27 @@ services={
         'category':'租屋',
         'img_url':  'https://i.imgur.com/ZLEUIqH.png',
         'title': '租屋(短期/長期)',
+        'duration':'1hr',
         'description':'不用擔心找不到短期或長期的房子,這邊應有盡有',
+        'price':5000,
         'post_url':'https://www.google.com.tw/?hl=zh_TW',
     },
     2:{
         'category':'買屋',
         'img_url': 'https://i.imgur.com/ZLEUIqH.png',
         'title': '買屋',
+        'duration':'1hr',
         'description':'想買房嗎?給你最優惠的價格包你滿意!',
+        'price':5000,
         'post_url':'https://www.google.com.tw/?hl=zh_TW',
     },
     3:{
         'category':'賞屋',
         'img_url': 'https://i.imgur.com/ZLEUIqH.png',
         'title': '賞屋',
+        'duration':'1hr',
         'description':'還在猶豫嗎?那不如先來看房子吧!',
+        'price':5000,
         'post_url':'https://www.google.com.tw/?hl=zh_TW',
     }
 }
