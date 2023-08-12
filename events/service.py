@@ -68,11 +68,11 @@ def service_category_event(event):
         [image_carousel_template_message])
 
 def service_event(event):
-    #底下三個要等上面的service建立後才寫,主要是跑service的服務
-    #data=dict(parse_qsl)(event.postback.data)
-    #bubbles=[]
+    #底下三個要等上面的service建立後才寫,主要是要跑service的服務
+    #data = dict(parse_qsl(event.postback.data))
+    #bubbles = []
     #for service_id in services:
-    data=dict(parse_qsl(event.postback.data))
+    data = dict(parse_qsl(event.postback.data))
 
     bubbles = []
 
@@ -159,14 +159,14 @@ def service_event(event):
 
             bubbles.append(bubble)
 
-    flex_message =FlexSendMessage(
+    flex_message = FlexSendMessage(
         alt_text='請選擇預約項目',
-        content={
-         "type":"carousel",
-         "contents": bubbles
+        contents={
+          "type": "carousel",
+          "contents": bubbles
+        }
+    )
 
-        })
-    
     line_bot_api.reply_message(
         event.reply_token,
         [flex_message])
