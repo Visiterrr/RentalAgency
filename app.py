@@ -12,7 +12,7 @@ import os
 app = Flask(__name__)#admin: !QAZ2wsx資料庫的帳號和密碼
 #讓程式自己去判斷如果是測試端就會使用APP_SETTINGS
 app.config.from_object(os.environ.get('APP_SETTINGS','config.DevConfig'))
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://aentalagency:RKLC58YerU7jXC340GZuql0XoIXPZqd3@dpg-cjhou4d1a6cs73elvp1g-a.singapore-postgres.render.com/aentalagency'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://userr:7tZfyeK42j5bvpkRUVqghp54EgHNgyjK@dpg-cjhm5rl1a6cs73955a80-a.singapore-postgres.render.com/reokroke'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.app = app
 db.init_app(app)
@@ -68,7 +68,7 @@ def handle_message(event):
     #管理者的line id 可以去資料庫中取
     #開頭是*代表是管理者
     elif message_text.startswith('*'):
-        if event.source.user_id not in ['']:
+        if event.source.user_id not in ['U2aa57b9878cd6c1ced5aa3b82251dfae']:
             return
         if message_text in ['*data','*d']:
             list_reservation_event(event)
