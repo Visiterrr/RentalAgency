@@ -320,7 +320,7 @@ def service_cancel_event(event):
 
     user = User.query.filter(User.line_id == event.source.user_id).first()
     reservation = Reservation.query.filter(Reservation.user_id == user.id,
-                                           Reservation.is_canceled.si_(False),
+                                           Reservation.is_canceled.is_(False),
                                            Reservation.booking_datetime > datetime.datetime.now()).first()
     if reservation:
         reservation.is_canceled = True
