@@ -98,11 +98,11 @@ def handle_postback(event):
         service_confirmed_event(event)
     #用get()來取得data中的資料，好處是如果備有data時會顯示None，而不會出線錯物
 
-    print('action:',data.get('action'))
-    print('category:',data.get('category'))
-    print('service_id:', data.get('service_id'))
-    print('date:', data.get('date'))
-    print('time:', data.get('time'))
+    #print('action:',data.get('action'))
+    #print('category:',data.get('category'))
+    #print('service_id:', data.get('service_id'))
+    #print('date:', data.get('date'))
+    #print('time:', data.get('time'))
 
 
 
