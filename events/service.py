@@ -316,7 +316,7 @@ def service_confirmed_event(event):
         [TextSendMessage(text='沒問題! 感謝您的預約，我已經幫你預約成功了喔，到時候見!')])  
 
 #取消預約 資料庫的欄位不會drop,是is_canceled欄位也會改成ture
-def service_cancle_event(event):
+def service_cancel_event(event):
 
     user = User.query.filter(User.line_id == event.source.user_id).first()
     reservation = Reservation.query.filter(Reservation.user_id == user.id,
@@ -336,10 +336,9 @@ def service_cancle_event(event):
             event.reply.token,
             [TextSendMessage(text='您目前沒有預約喔')])
         
-def test_event(event):
-    flex_message = FlexSendMessage(
-        alt_text='hello',
-        contents={
+#def test_event(event):
+    #flex_message = FlexSendMessage(
+        #alt_text='hello',
+        #contents={
 
-        }
-    )
+        #})
