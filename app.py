@@ -66,7 +66,8 @@ def handle_message(event):
     elif message_text == '@預約服務':
         service_category_event(event)
     elif message_text == '@重新預約':
-        service_select_date_event(event)
+        return service_category_event(event)
+    
     #管理者的line id 可以去資料庫中取
     #開頭是*代表是管理者
     elif message_text.startswith('*'):
@@ -96,7 +97,7 @@ def handle_postback(event):
         service_confirmed_event(event)
     elif data.get('action') == 'cancel':
         service_cancel_event(event)
-    #用get()來取得data中的資料，好處是如果備有data時會顯示None，而不會出線錯物
+    #用get()來取得data中的資料，好處是如果備有data時會顯示None，而不會出現錯誤
 
     #print('action:',data.get('action'))
     #print('category:',data.get('category'))
@@ -123,10 +124,10 @@ def handle_follow(event):
         event.reply_token,
         TextSendMessage(text=welcome_msg))
 
-
 @handler.add(UnfollowEvent)
 def handle_unfollow(event):
     print(event)
+
         
 if __name__ == '__main__':
     app.run()
