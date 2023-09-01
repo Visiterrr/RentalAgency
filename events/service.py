@@ -7,7 +7,7 @@ from models.reservation import Reservation
 services={
     1:{
         'category':'租屋',
-        'img_url':  'https://i.imgur.com/ZLEUIqH.png',
+        'img_url':  'https://i.imgur.com/40TlIye.png',
         'title': '租屋(短期/長期)',
         'duration':'1hr',
         'description':'不用擔心找不到短期或長期的房子,這邊應有盡有',
@@ -39,7 +39,7 @@ def service_category_event(event):
         template=ImageCarouselTemplate(
             columns=[
                 ImageCarouselColumn(
-                    image_url='https://i.imgur.com/40TlIye.png',
+                    image_url='https://i.imgur.com/jEbZFO4.png',
                     action=PostbackAction(
                         label='租屋',
                         display_text='想租屋',
@@ -181,14 +181,14 @@ def service_select_date_event(event):
     weekday_string = {
         0: '一',
         1: '二',
-        2: '三',
+        2: '三休息日:)',
         3: '四',
         4: '五',
         5: '六',
         6: '日',
     }
 
-    business_day = [1, 2, 3, 4, 5, 6]
+    business_day = [1, 2, 4, 5, 6]
 
     quick_reply_buttons = []
 
