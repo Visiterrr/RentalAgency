@@ -16,11 +16,11 @@ def about_us_event(event):
     ]
 
     text_message = TextSendMessage (text='''$ DII $
--全網最新
+-全網最新：放上去的一定是最新圖片。
 
 -嚴格把關：所有用品皆未消毒且是二手。
 
--設備齊全：二手的不會有齊全的問題。
+-設備齊全：內附10kg陶土設備不夠自己捏。
 
 -獨立空間：四個人獨立一個空間!。''', emojis=emoji)
     
@@ -29,7 +29,7 @@ def about_us_event(event):
         sticker_id='51626517'
     )
 
-    about_us_img = 'https://i.imgur.com/70A4WdI.jpg'
+    about_us_img = 'https://i.imgur.com/57FI7lK_d.jpg?maxwidth=520&shape=thumb&fidelity=high'
 
     image_message = ImageSendMessage(
         original_content_url=about_us_img,

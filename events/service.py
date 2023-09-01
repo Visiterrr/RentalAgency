@@ -16,7 +16,7 @@ services={
     },
     2:{
         'category':'買屋',
-        'img_url': 'https://i.imgur.com/ZLEUIqH.png',
+        'img_url': 'https://i.imgur.com/zlgg7EJ.jpeg',
         'title': '買屋',
         'duration':'1hr',
         'description':'想買房嗎?給你最優惠的價格包你滿意!',
@@ -25,7 +25,7 @@ services={
     },
     3:{
         'category':'賞屋',
-        'img_url': 'https://i.imgur.com/ZLEUIqH.png',
+        'img_url': 'https://i.imgur.com/ZV97xVU.png',
         'title': '賞屋',
         'duration':'1hr',
         'description':'還在猶豫嗎?那不如先來看房子吧!',
@@ -39,7 +39,7 @@ def service_category_event(event):
         template=ImageCarouselTemplate(
             columns=[
                 ImageCarouselColumn(
-                    image_url='https://i.imgur.com/ZLEUIqH.png',
+                    image_url='https://i.imgur.com/Fvalzpl.jpeg',
                     action=PostbackAction(
                         label='租屋',
                         display_text='想租屋',
@@ -55,7 +55,7 @@ def service_category_event(event):
                     )
                 ),
                 ImageCarouselColumn(
-                    image_url='https://i.imgur.com/ZLEUIqH.png',
+                    image_url='https://i.imgur.com/Cdkehev.png',
                     action=PostbackAction(
                         label='賞屋',
                         display_text='想賞屋',
