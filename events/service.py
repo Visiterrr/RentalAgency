@@ -39,7 +39,7 @@ def service_category_event(event):
         template=ImageCarouselTemplate(
             columns=[
                 ImageCarouselColumn(
-                    image_url='https://i.imgur.com/Fvalzpl.jpeg',
+                    image_url='https://i.imgur.com/40TlIye.png',
                     action=PostbackAction(
                         label='租屋',
                         display_text='想租屋',
