@@ -42,16 +42,16 @@ def service_category_event(event):
                     image_url='https://i.imgur.com/jEbZFO4.png',
                     action=PostbackAction(
                         label='租屋(短期)',
-                        display_text='想租屋',
-                        data='action=service&category=租屋'
+                        display_text='想租屋(短期)',
+                        data='action=service&category=租屋(短期)'
                     )
                 ),
                 ImageCarouselColumn(
                     image_url='https://i.imgur.com/ZLEUIqH.png',
                     action=PostbackAction(
                         label='租屋(長期)',
-                        display_text='想租屋',
-                        data='action=service&category=租屋'
+                        display_text='想租屋(長期)',
+                        data='action=service&category=租屋(長期)'
                     )
                 ),
                 ImageCarouselColumn(
