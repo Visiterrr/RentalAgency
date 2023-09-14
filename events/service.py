@@ -313,7 +313,7 @@ def service_confirmed_event(event):
 
     line_bot_api.reply_message(
         event.reply_token,
-        [TextSendMessage(text='沒問題! 感謝您的預約，我已經幫你預約成功了喔，到時候見!')])  
+        [TextSendMessage(text='沒問題! 感謝您的預約，我已經幫你預約成功了喔，到時候見!放鳥的話下載東西永遠只能到99%喔:)')])  
 
 #取消預約 資料庫的欄位不會drop,是is_canceled欄位也會改成ture
 def service_cancel_event(event):
