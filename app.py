@@ -66,7 +66,7 @@ def handle_message(event):
     elif message_text == '@預約服務':
         service_category_event(event)
     elif message_text == '@我想重新預約':
-        return service_category_event(event)
+        service_category_event(event)
     
     #管理者的line id 可以去資料庫中取
     #開頭是*代表是管理者

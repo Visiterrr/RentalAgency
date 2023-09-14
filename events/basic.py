@@ -18,11 +18,13 @@ def about_us_event(event):
     text_message = TextSendMessage (text='''$ DII $
 -全網最新：放上去的一定是最新圖片。
 
--嚴格把關：所有用品皆未消毒且是二手。
+-搜尋方便：簡化操作介面，使用上一定很好理解。
 
--設備齊全：內附10kg陶土設備不夠自己捏。
+-種類齊全：想找的房屋類型種類這裡都會有!
 
--獨立空間：四個人獨立一個空間!。''', emojis=emoji)
+-隨約隨看：預約成功即可依日期時間賞屋!
+                                    
+-如有其他問題可以詢問工作人員(意見接受，態度照舊)''', emojis=emoji)
     
     sticker_message = StickerSendMessage(
         package_id='11538',

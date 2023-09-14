@@ -6,18 +6,18 @@ from models.user import User
 from models.reservation import Reservation
 services={
     1:{
-        'category':'租屋',
+        'category':'租屋(短期)',
         'img_url':  'https://i.imgur.com/40TlIye.png',
-        'title': '租屋(短期/長期)',
+        'title': '租屋(短期)',
         'duration':'1hr',
         'description':'不用擔心找不到短期或長期的房子,這邊應有盡有',
         'price':5000,
         'post_url':'https://www.google.com.tw/?hl=zh_TW',
     },
     2:{
-        'category':'買屋',
+        'category':'租屋(長期)',
         'img_url': 'https://i.imgur.com/zlgg7EJ.jpeg',
-        'title': '買屋',
+        'title': '租屋(長期)',
         'duration':'1hr',
         'description':'想買房嗎?給你最優惠的價格包你滿意!',
         'price':5000,
@@ -41,7 +41,7 @@ def service_category_event(event):
                 ImageCarouselColumn(
                     image_url='https://i.imgur.com/jEbZFO4.png',
                     action=PostbackAction(
-                        label='租屋',
+                        label='租屋(短期)',
                         display_text='想租屋',
                         data='action=service&category=租屋'
                     )
@@ -49,9 +49,9 @@ def service_category_event(event):
                 ImageCarouselColumn(
                     image_url='https://i.imgur.com/ZLEUIqH.png',
                     action=PostbackAction(
-                        label='買屋',
-                        display_text='想買屋',
-                        data='action=service&category=買屋'
+                        label='租屋(長期)',
+                        display_text='想租屋',
+                        data='action=service&category=租屋'
                     )
                 ),
                 ImageCarouselColumn(
@@ -181,7 +181,7 @@ def service_select_date_event(event):
     weekday_string = {
         0: '一',
         1: '二',
-        2: '三休息日:)',
+        2: '三',
         3: '四',
         4: '五',
         5: '六',
