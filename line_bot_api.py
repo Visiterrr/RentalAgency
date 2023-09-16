@@ -13,6 +13,6 @@ from linebot.models import (
 )
 
 # Channel access token
-line_bot_api = LineBotApi('')
+line_bot_api = LineBotApi('DlO0igCuyKkYO4BhNh1sp9m6GuNj3jowGNpK38PYB0GNnehe+QG79OxCB2y39X7FeHsksAeVLLs7xXs1raVzplHHpvE03gUciKQyR+FDLLB8Fp1me54dmvCxxUCuKYr9xaCrMy2efhjt6EqRcdvovwdB04t89/1O/w1cDnyilFU=')
 #Channel secret
-handler = WebhookHandler('')
+handler = WebhookHandler('f444d6fefd0f4acb92aabb5f05e9038a')
