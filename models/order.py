@@ -1,25 +1,26 @@
-from sqlalchemy import Column, DateTime, String,Integer,func,Boolean,ForeignKey
+from sqlalchemy import Column, DateTime, String, Integer, func, Boolean, ForeignKey
 from sqlalchemy.orm import relationship
 from linebot.models import *
 from database import Base
-
 
 class Orders(Base):
     __tablename__ = 'orders'#table name
 
     id = Column(String,primary_key=True)
 
-    amount = Column(Integer)#紀錄訂單總金額
+    amount = Column(Integer)#記錄訂單金額
 
-    transaction_id = Column(String)#串接line pay 的時候會用到
-    is_pay = Column(Boolean,default=False)#紀錄訂單是否已經付款,預設False代表未付款
+    transaction_id = Column(String) #串接line pay 的時候會用到
+    is_pay = Column(Boolean, default=False) # 記錄訂單是否已經付款，預設False代表未付款
 
-    created_time = Column(DateTime,default=func.now())#訂單建立時間
+    created_time= Column(DateTime, default=func.now()) #訂單建立時間
 
-    user_id = Column("user_id",ForeignKey("users.id"))#ForeignKey外來鏈的意思，訂單是由哪一個user建立的
+    user_id= Column("user_id", ForeignKey("users.id")) #Foreignkey 外來間的意思，訂單是由哪一個user建立的
 
-    items = relationship('Items',backref='order')#加上這行建立訂單關聯性
+    items = relationship("Items", backref='order') # 加上這行建立訂單關聯性
 
+    
+    
     def display_receipt(self):
         item_box_component = []
 

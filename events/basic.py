@@ -1,6 +1,64 @@
 from line_bot_api import *
 
+# def about_us_event(event):
+   
+#     # 訊息內插入表情符號，index為文字內位置
+#     # emoji = [
+#     #         {
+#     #             "index": 0,
+#     #             "productId": "5ac21184040ab15980c9b43a",
+#     #             "emojiId": "225"
+#     #         },
+#     #         {
+#     #             "index": 12,
+#     #             "productId": "5ac21184040ab15980c9b43a",
+#     #             "emojiId": "225"
+#     #         }
+#     #     ]
+    
+#     text_message = TextSendMessage(text='''Hello! 您好，歡迎您成為 Aesthetc_Medicine 的好友！
 
+# 我是 Aesthetc_Medicine 小幫手！
+
+# -歡迎預約門診
+
+# -諮詢費每30分鐘200元喔！
+    
+# -醫美/整型外科/隆乳/隆鼻/美麗計畫''') #欲使用表情符號使用 emojis=emoji
+
+
+#     #貼圖
+#     sticker_message = StickerSendMessage(
+#         package_id = '8522',
+#         sticker_id = '16581271'
+#     )
+#     #照片
+#     # about_us_img = 'https://i.imgur.com/iYK9HG8.jpg'
+#     # image_message = ImageSendMessage(
+#     #     original_content_url = about_us_img,
+#     #     preview_image_url = about_us_img
+#     # )
+
+    
+#     line_bot_api.reply_message(
+#         event.reply_token,
+#         [text_message,sticker_message] #,image_message
+#     )
+
+
+#22.63539983180636, 120.30192498466002
+# def location_event(event):
+#     location_message = LocationSendMessage(
+#         title = "醫美診所",
+#         address='高雄市新興區中山一路243號',
+#         latitude=22.63539983180636,
+#         longitude=120.30192498466002
+#     )
+
+#     line_bot_api.reply_message(
+#         event.reply_token,
+#         location_message
+#     )
 def about_us_event(event):
     emoji = [
         {
@@ -9,50 +67,48 @@ def about_us_event(event):
             "emojiId": "225"
         },
         {
-            "index": 6,
+            "index": 13,
             "productId": "5ac21184040ab15980c9b43a",
             "emojiId": "225"
         }
     ]
 
-    text_message = TextSendMessage (text='''$ DII $
--全網最新：放上去的一定是最新圖片。
+    text_message = TextSendMessage(text='''$ Master SPA $
+專業中醫推拿出身，融合東西方按摩手法
+                                   
+預約請輸入：@預約服務                                  
 
--搜尋方便：簡化操作介面，使用上一定很好理解。
+-嚴格把關：所有用品皆有消毒或採一次用品。
 
--種類齊全：想找的房屋類型種類這裡都會有!
+-設備齊全：夏天有冷氣，冬天有電毯和暖氣。
 
--隨約隨看：預約成功即可依日期時間賞屋!
-                                    
--如有其他問題可以詢問工作人員(意見接受，態度照舊)''', emojis=emoji)
-    
+-獨立空間：專業乾淨高品質獨立按摩空間。''', emojis=emoji)
+
     sticker_message = StickerSendMessage(
-        package_id='11538',
-        sticker_id='51626517'
+        package_id='8522',
+        sticker_id='16581271'
     )
 
-    about_us_img = 'https://i.imgur.com/57FI7lK_d.jpg?maxwidth=520&shape=thumb&fidelity=high'
+    about_us_img = 'https://i.imgur.com/70A4WdI.jpg'
 
     image_message = ImageSendMessage(
         original_content_url=about_us_img,
         preview_image_url=about_us_img
     )
+
     line_bot_api.reply_message(
         event.reply_token,
         [text_message, sticker_message, image_message])
 
-def location_event(event):
 
+def location_event(event):
     location_message = LocationSendMessage(
-        title='DII',
-        address='高雄市三民區三民路三民街三十三號',
-        latitude=48.858001, 
-        longitude=2.294812 )
-    
+        title='Master SPA',
+        address='110台北市信義區信義路五段7號',
+        latitude=25.0333695,
+        longitude=121.5638839
+    )
 
     line_bot_api.reply_message(
         event.reply_token,
         location_message)
-    
-
-

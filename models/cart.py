@@ -1,7 +1,8 @@
 from cachelib import SimpleCache
 from linebot.models import *
 from database import db_session
-from product import Products
+from models.product import Products
+from app import *
 
 cache = SimpleCache()
 
@@ -89,8 +90,8 @@ class Cart(object):
                     ButtonComponent(
                         style='primary',
                         color='#1DB446',
-                        action=PostbackAction(label='Checkout',
-                                              display_text='checkout',
+                        action=PostbackAction(label='結帳',
+                                              display_text='結帳',
                                               data='action=checkout')
                     ),
                     BoxComponent(
@@ -101,15 +102,15 @@ class Cart(object):
                                 style='primary',
                                 color='#aaaaaa',
                                 flex=3,
-                                action=MessageAction(label='Empty Cart',
-                                                     text='Empty cart'),
+                                action=MessageAction(label='清空購物車',
+                                                     text='清空購物車'),
                             ),
                             ButtonComponent(
                                 style='primary',
                                 color='#aaaaaa',
-                                flex=2,
-                                action=MessageAction(label='Add',
-                                                     text='add'),
+                                flex=3,
+                                action=MessageAction(label='選購其他商品',
+                                                     text='再去逛逛'),
                             )
                         ]
 
@@ -122,3 +123,30 @@ class Cart(object):
 
         return message#會回傳到app.py message = cart.display()
 
+    def ordering(self,event):
+        message_text = str(event.message.text).lower()
+        product_name = message_text.split(',')[0]#利用split(',')拆解並取得第[0]個位置的值
+        # 例如 Coffee,i'd like to have經過split(',')拆解並取得第[0]個位置後就是 Coffee
+        num_item = message_text.rsplit(':')[1]#同理產品就用(':')拆解取得第[1]個位置的值
+        #資料庫搜尋是否有這個產品名稱
+        product = db_session.query(Products).filter(Products.name.ilike(product_name)).first()
+        #如果有這個產品名稱就會加入
+        if product:
+
+            self.add(product=product_name, num=num_item)
+            #然後利用confirm_template的格式詢問用戶是否還要加入？
+            confirm_template = ConfirmTemplate(
+                text='好的, {} (組/個/罐) {}, 還需要其他的嗎?'.format(num_item, product_name),
+                actions=[
+                    MessageAction(label='選購其他商品', text='再去逛逛'),
+                    MessageAction(label="查看購物車", text="查看購物車")
+                ])
+
+            message = TemplateSendMessage(alt_text='還需要其他的嗎?', template=confirm_template)
+
+        else:
+            #如果沒有找到產品名稱就會回給用戶沒有這個產品
+            message = TextSendMessage(text="抱歉！找不到此商品： {}.".format(product_name))
+        print(self.bucket())
+        return  message
+        
